@@ -1,0 +1,181 @@
+.cabecera__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    /*para tener la cabecera fija en la parte de arriba */
+    top: 0;
+    /*para que se mantenga arriba */
+}
+
+.cabecera__buscar__item {
+    display: none;
+}
+
+/*seccion superio*/
+.superior__seccion__container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    /*para que no se encaramen los textos una linea de texto doble  en fin no se quiebren */
+    overflow: scroll;
+    /*scroll para los datos a seleccionar*/
+    gap: 15px;
+}
+
+/*seccion video*/
+.videos__item{
+    height: 303px;
+    width: 280px;
+    flex-grow: 1; /* */
+}
+
+.videos__container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+}
+
+.descripcion-video{
+    margin-top: 1rem;
+    display: flex;
+    align-items: start;
+}
+
+.descripcion-video img {
+    margin-right: 1rem; 
+    flex-shrink: 0;  /*  Evita que la imagen se reduzca */
+    
+}
+
+.detalles__video {
+    flex-direction: column;
+    text-align:left;
+
+}
+
+.detalles__video h3{
+    margin-bottom: 10px;
+}
+
+.menu__container {
+    position: fixed;
+    bottom: 0%;
+    /*parecido al top pero para la parte inferior*/
+    height: 75px;
+    width: 100%;
+}
+
+.menu__lista {
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.menu__lista li {
+    align-self: center;
+}
+
+.menu__itens {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu__lista:nth-child(2),
+/*esto es cuando tenemos clase hermanas para hacer que alguna se quiten de layout para ciertas pantallas*/
+.menu__lista:nth-child(3),
+.menu__lista:nth-child(4) {
+    display: none;
+}
+
+.rodapie__container {
+    display: flex;
+    /*flex-direction: column;
+    flex-wrap: wrap;  hace que se acomoden las columnas */
+    flex-flow: column wrap;
+}
+
+
+
+@media (min-width:834px) {
+
+    .cabecera__buscar__item {
+        display: block;
+    }
+
+    .menu__container {
+        left: 0px;
+        height: auto;
+        width: 74px;
+        top: 80px;
+    }
+
+    .menu__lista {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 15px;
+        gap: 33px;
+    }
+
+    .rodapie__container {
+        justify-content: space-between;
+    }
+}
+
+@media (min-width:1440px) {
+
+    .cabecera__buscar__item {
+        display: block;
+    }
+
+    .menu__container {
+        width: 239px;
+        overflow: scroll;
+    }
+
+
+
+    .menu__lista:nth-child(2),
+    /*esto es cuando tenemos clase hermanas para hacer que alguna se quiten de layout para ciertas pantallas*/
+    .menu__lista:nth-child(3),
+    .menu__lista:nth-child(4) {
+        display: flex;
+    }
+
+    .menu__lista {
+        height: auto;
+        padding: 20px 17px 20px 15px;
+        gap: 18px;
+    }
+
+    .menu__lista:nth-child(3) {
+        flex-direction: column-reverse;
+    }
+
+    .videojuegos {
+        order: 3 ;
+    }
+
+    .peliculas {
+        order: 2 ;
+    }
+
+    .premium {
+        order: 1 ;
+    }
+
+
+    .menu__itens{
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .rodapie__container {
+        justify-content: space-between;
+        
+    }
+
+}
